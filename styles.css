@@ -226,6 +226,10 @@ section .title::after{
     background-color: rgb(60, 220, 20);
     border-color: rgb(60, 220, 20);
 }
+#feedsk{
+    background-color: rgb(60, 220, 20);
+    border-color: rgb(60, 220, 20);
+}
 #results{
     font-size: large;
     font-weight: 700;
@@ -310,6 +314,7 @@ section .title::after{
     background: #111;
     content: "Layers Feed Calculations";
 }
+
 .services .serv-content .card{
     width: calc(33% - 20px);
     background: #222;
@@ -706,3 +711,6 @@ footer span a:hover{
 }
 
 
+#kienyeji{
+    margin-top: 2%;
+}

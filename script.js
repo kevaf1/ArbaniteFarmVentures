@@ -156,4 +156,48 @@ function broilerfeedFunction(){
         }
     }
 
+    function kienyejifeedFunction() {
+        // Get input values from the form
+        const startDay = parseInt(document.getElementById("dayage").value);
+        const endDay = parseInt(document.getElementById("dayagel").value);
+        const numChicks = parseInt(document.getElementById("Nokienyeji").value);
+        const resultsDisplay = document.getElementById("resultsk");
+    
+        // Feed data in grams per chick per day (based on the table provided)
+        const feedData = [
+            18, // Week 1 (day 0-7)
+            23, // Week 2
+            28, // Week 3
+            33, // Week 4
+            38, // Week 5
+            43, // Week 6 (Transition to growers feed)
+            49, // Week 7
+            51, // Week 8
+            68, // Week 9 (Transition to kienyeji mash)
+            73, // Week 10
+            78, // Week 11
+            88, // Week 12
+            97, // Week 13
+            106, // Week 14 (Supplement with greens)
+            115, // Week 15
+            122, // Week 16
+            128, // Week 17
+            130  // Week 18
+        ];
+    
+        // Calculate total feed
+        let totalFeed = 0;
+        for (let day = startDay; day <= endDay; day++) {
+            const week = Math.floor(day / 7); // Convert day to week
+            if (week < feedData.length) {
+                totalFeed += feedData[week]; // Add the daily feed amount for the specific week
+            }
+        }
+    
+        // Multiply by the number of chicks
+        totalFeed *= numChicks;
+    
+        // Display the result
+        resultsDisplay.innerText = `Total feed required from day ${startDay} to day ${endDay} for ${numChicks} chicks is ${totalFeed} grams.`;
+    }
     
