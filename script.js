@@ -156,6 +156,54 @@ function broilerfeedFunction(){
         }
     }
 
+    // function kienyejifeedFunction() {
+    //     // Get input values from the form
+    //     const startDay = parseInt(document.getElementById("dayage").value);
+    //     const endDay = parseInt(document.getElementById("dayagel").value);
+    //     const numChicks = parseInt(document.getElementById("Nokienyeji").value);
+    //     const resultsDisplay = document.getElementById("resultsk");
+    
+    //     // Feed data in grams per chick per day (based on the table provided)
+    //     const feedData = [
+    //         18, // Week 1 (day 0-7)
+    //         23, // Week 2
+    //         28, // Week 3
+    //         33, // Week 4
+    //         38, // Week 5
+    //         43, // Week 6 (Transition to growers feed)
+    //         49, // Week 7
+    //         51, // Week 8
+    //         68, // Week 9 (Transition to kienyeji mash)
+    //         73, // Week 10
+    //         78, // Week 11
+    //         88, // Week 12
+    //         97, // Week 13
+    //         106, // Week 14 (Supplement with greens)
+    //         115, // Week 15
+    //         122, // Week 16
+    //         128, // Week 17
+    //         130  // Week 18
+    //     ];
+    
+    //     // Calculate total feed in grams
+    //     let totalFeed = 0;
+    //     for (let day = startDay; day <= endDay; day++) {
+    //         const week = Math.floor(day / 7); // Convert day to week
+    //         if (week < feedData.length) {
+    //             totalFeed += feedData[week]; // Add the daily feed amount for the specific week
+    //         }
+    //     }
+    
+    //     // Multiply by the number of chicks
+    //     totalFeed *= numChicks;
+    
+    //     // Convert total feed to kilograms
+    //     const totalFeedKg = totalFeed / 1000;
+    
+    //     // Display the result
+    //     resultsDisplay.innerText = `Total feed required from day ${startDay} to day ${endDay} for ${numChicks} chicks is ${totalFeed} grams (${totalFeedKg.toFixed(2)} kg).`;
+    // }
+    
     function kienyejifeedFunction() {
         // Get input values from the form
         const startDay = parseInt(document.getElementById("dayage").value);
@@ -163,45 +211,52 @@ function broilerfeedFunction(){
         const numChicks = parseInt(document.getElementById("Nokienyeji").value);
         const resultsDisplay = document.getElementById("resultsk");
     
-        // Feed data in grams per chick per day (based on the table provided)
+        // Feed data for each week
         const feedData = [
-            18, // Week 1 (day 0-7)
-            23, // Week 2
-            28, // Week 3
-            33, // Week 4
-            38, // Week 5
-            43, // Week 6 (Transition to growers feed)
-            49, // Week 7
-            51, // Week 8
-            68, // Week 9 (Transition to kienyeji mash)
-            73, // Week 10
-            78, // Week 11
-            88, // Week 12
-            97, // Week 13
-            106, // Week 14 (Supplement with greens)
-            115, // Week 15
-            122, // Week 16
-            128, // Week 17
-            130  // Week 18
+            { grams: 18, type: "CHICK STARTER FEED" }, // Week 1
+            { grams: 23, type: "CHICK STARTER FEED" }, // Week 2
+            { grams: 28, type: "CHICK STARTER FEED" }, // Week 3
+            { grams: 33, type: "CHICK STARTER FEED" }, // Week 4
+            { grams: 38, type: "CHICK STARTER FEED" }, // Week 5
+            { grams: 43, type: "Gradual transition to growers feed" }, // Week 6
+            { grams: 49, type: "GROWERS FEED" }, // Week 7
+            { grams: 51, type: "GROWERS FEED" }, // Week 8
+            { grams: 68, type: "Gradual transition to kienyeji mash" }, // Week 9
+            { grams: 73, type: "KIENYEJI FEED" }, // Week 10
+            { grams: 78, type: "KIENYEJI FEED" }, // Week 11
+            { grams: 88, type: "KIENYEJI FEED" }, // Week 12
+            { grams: 97, type: "KIENYEJI FEED" }, // Week 13
+            { grams: 106, type: "KIENYEJI FEED (Supplement with greens)" }, // Week 14
+            { grams: 115, type: "KIENYEJI FEED" }, // Week 15
+            { grams: 122, type: "KIENYEJI FEED" }, // Week 16
+            { grams: 128, type: "KIENYEJI FEED" }, // Week 17
+            { grams: 130, type: "KIENYEJI FEED" } // Week 18
         ];
     
-        // Calculate total feed in grams
+        // Calculate total feed, average feed per chick per day, and collect feed types used
         let totalFeed = 0;
+        const feedTypes = new Set();
+        let daysCounted = 0;
+    
         for (let day = startDay; day <= endDay; day++) {
             const week = Math.floor(day / 7); // Convert day to week
             if (week < feedData.length) {
-                totalFeed += feedData[week]; // Add the daily feed amount for the specific week
+                totalFeed += feedData[week].grams; // Add the daily feed amount for the specific week
+                feedTypes.add(feedData[week].type); // Collect unique feed types
+                daysCounted++;
             }
         }
     
-        // Multiply by the number of chicks
-        totalFeed *= numChicks;
+        // Calculate average feed per chick per day
+        const averageFeedPerChick = totalFeed / daysCounted;
+        const totalFeedChicks = totalFeed * numChicks;
+        const totalFeedKg = totalFeedChicks / 1000;
     
-        // Convert total feed to kilograms
-        const totalFeedKg = totalFeed / 1000;
-    
-        // Display the result
-        resultsDisplay.innerText = `Total feed required from day ${startDay} to day ${endDay} for ${numChicks} chicks is ${totalFeed} grams (${totalFeedKg.toFixed(2)} kg).`;
+        // Display the result with summary information
+        resultsDisplay.innerText = `From day ${startDay} to day ${endDay} for ${numChicks} chicks:
+    - Average feed per chick per day: ${averageFeedPerChick.toFixed(2)} grams
+    - Total feed required: ${totalFeedChicks} grams (${totalFeedKg.toFixed(2)} kg)
+    - Feed types used during this period: ${Array.from(feedTypes).join(", ")}
+    `;
     }
-    
-    
+        
