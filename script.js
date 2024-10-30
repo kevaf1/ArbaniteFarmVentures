@@ -185,7 +185,7 @@ function broilerfeedFunction(){
             130  // Week 18
         ];
     
-        // Calculate total feed
+        // Calculate total feed in grams
         let totalFeed = 0;
         for (let day = startDay; day <= endDay; day++) {
             const week = Math.floor(day / 7); // Convert day to week
@@ -197,7 +197,11 @@ function broilerfeedFunction(){
         // Multiply by the number of chicks
         totalFeed *= numChicks;
     
+        // Convert total feed to kilograms
+        const totalFeedKg = totalFeed / 1000;
+    
         // Display the result
-        resultsDisplay.innerText = `Total feed required from day ${startDay} to day ${endDay} for ${numChicks} chicks is ${totalFeed} grams.`;
+        resultsDisplay.innerText = `Total feed required from day ${startDay} to day ${endDay} for ${numChicks} chicks is ${totalFeed} grams (${totalFeedKg.toFixed(2)} kg).`;
     }
+    
     
