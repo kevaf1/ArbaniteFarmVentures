@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Primary Meta Tags -->
+<title>ArbaniteFarmVentures</title>
+<meta name="title" content="ArbaniteFarmVentures" />
+<meta name="description" content="Poultry, Pigs and piglets and we also deal high quality animal feeds" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kevaf1.github.io/ArbaniteFarmVentures/" />
+<meta property="og:title" content="ArbaniteFarmVentures" />
+<meta property="og:description" content="Poultry, Pigs and piglets and we also deal high quality animal feeds" />
+<meta property="og:image" content="https://raw.githubusercontent.com/kevaf1/ArbaniteFarmVentures/main/Resources/PicsArt_04-30-04.20.37.jpg" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://kevaf1.github.io/ArbaniteFarmVentures/" />
+<meta property="twitter:title" content="ArbaniteFarmVentures" />
+<meta property="twitter:description" content="Poultry, Pigs and piglets and we also deal high quality animal feeds" />
+<meta property="twitter:image" content="https://raw.githubusercontent.com/kevaf1/ArbaniteFarmVentures/main/Resources/PicsArt_04-30-04.20.37.jpg" />
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbanite</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+</head>
+<body>
+ <!-- Navigation -->
+<nav class="navbar">
+    <div class="max-width">
+        <div class="logo">
+            <img src="./Resources/PicsArt_04-30-04.20.37.jpg" alt="Logo" height="120px">
+            <a href="#">AR<span>BAN</span>ITE.</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Menu Items (hidden by default on small screens) -->
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Broilers</a></li>
+            <li><a href="#layers">Layers</a></li>
+            <li><a href="#pig">Sus Scrofa</a></li>
+            <li><a href="#kienyeji">Kienyeji</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+
+     <!-- home section starts here -->
+     <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello and welcome to</div>
+                <div class="text-2">Arbanite Farm VENTURES</div>
+                <div class="text-3">Dealers in: <br><span class="typing"></span></div>
+                <a href="#about">Broilers</a> <a href="#layers">Layers</a> <a href="#pig">Pigs</a> <a href="#kienyeji">Kienyeji</a>
+            </div>
+        </div>
+    </section>
+    <!-- about Section -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title" id="poultry">POULTRY</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="Resources/Broilers1.jpg" alt="" id="poupic">
+                </div>
+                <div class="column right">
+                    <div class="container mt-5">
+                        <form id="feedform">
+                            <div class="mb-3">
+                                <label for="day1" class="form-label">Beginning</label>
+                                <input type="number" class="form-control" id="day1" name="day1" min="0" max="59" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="daylast" class="form-label">End</label>
+                                <input type="number" class="form-control" id="daylast" name="daylast" min="1" max="59" required>
+                            </div>
+                            <div class="mb-3" margin-top="-50px">
+                                <label for="chicks" class="form-label">No of Chicks</label>
+                                <input type="number" class="form-control" id="chicks" name="chicks" min="0" max="2024" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="feeds" onclick=" chickfeedFunction()">Submit</button>  <button class="btn btn-primary" id="feeds" onClick="window.location.reload();">Refresh Page</button>
+                            <p id="results"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+        <!-- Projects Section  -->
+         <section class="services" id="layers">
+            <div class="max-width" id="layers">
+                <h2 class="title" id="poultry" >POULTRY</h2>
+                <div class="about-content">
+                    <div class="column left">
+                        <img src="Resources/LayersnoBG.png" alt="" id="poupic"> 
+                        
+                    </div>
+                    <div class="column right">
+                        <div class="container mt-5">
+                            <form id="feedform">
+                                <div class="mb-3">
+                                    <label for="ageweek" class="form-label">Age in Weeks</label>
+                                    <input type="number" class="form-control" id="ageweek" name="ageweek" min="0" max="76" required>
+                                </div>
+                                <div class="mb-3" margin-top="-50px">
+                                    <label for="Nochicks" class="form-label">No. of Chicks</label>
+                                    <input type="number" class="form-control" id="Nochicks" name="Nochicks" min="0" max="2024" required>
+                                </div> 
+                                <div class="mb-3" margin-top="-50px">
+                                    <label for="Nodays" class="form-label">No of Days</label>
+                                    <input type="number" class="form-control" id="Nodays" name="Nodays" min="0" max="900" required>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="feedsb" onclick=" broilerfeedFunction()">Submit</button>  <button class="btn btn-primary" id="feedsb" onClick="window.location.reload();">Refresh Page</button>
+                                <p id="resultsb"></p> <p id="linebr"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+
+    <!-- Pigs Section -->
+    <section class="pigs" id="pigs">
+        <div class="max-width">
+            <h2 class="title" id="pig">Sus Scrofa</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="Resources/pigsnobg.png" alt="" id="poupic">
+                </div>
+                <div class="column right">
+                    <div class="container mt-5">
+                        <form id="feedform">
+                            <h2>Lactator Pigs(To 8 Weeks)</h2>
+                            <div class="mb-3">
+                                <label for="pday1" class="form-label">Age in Weeks(Start)</label>
+                                <input type="number" class="form-control" id="pday1" name="pday1" min="0" max="7" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lday1" class="form-label">Age in Weeks(End)</label>
+                                <input type="number" class="form-control" id="lday1" name="lday1" min="1" max="8" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lactp" class="form-label">Number of Lactating Pigs</label>
+                                <input type="number" class="form-control" id="lactp" name="lactp" min="1" max="5000" required>
+                            </div>
+                            <div class="mb-3" margin-top="-50px">
+                                <label for="piglets" class="form-label">No of Piglets</label>
+                                <input type="number" class="form-control" id="piglets" name="piglets" min="0" max="5024" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="feeds" onclick=" lactatorfeedFunction()">Submit</button>  <button class="btn btn-primary" id="feeds" onClick="window.location.reload();">Refresh Page</button>
+                            <p id="presults"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pigs" id="pigs">
+        <div class="max-width">   
+                    <div class="column right">
+                    <div class="container mt-5">
+                        <form id="feedform" class="pigletsform">
+                            <h2>Feed after 8 Weeks</h2>
+                            <div class="mb-3">
+                                <label for="pday1" class="form-label">Age in Weeks(Start)</label>
+                                <input type="number" class="form-control" id="pgday1" name="pgday1" min="0" max="7" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plday1" class="form-label">Age in Weeks(End)</label>
+                                <input type="number" class="form-control" id="plday1" name="plday1" min="1" max="8" required>
+                            </div>
+                            <div class="mb-3" margin-top="-50px">
+                                <label for="piglets1" class="form-label">No of Piglets</label>
+                                <input type="number" class="form-control" id="piglets1" name="piglet1s" min="0" max="5024" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="feeds" onclick=" pigletsFunction()">Submit</button>  
+                            <p id="pletresults"></p> <p id="expweight"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Kienyeji Section starts here -->
+     <section class="services" id="kienyeji">
+        <div class="max-width" id="kienyeji">
+            <h2 class="title1" id="poultry" >POULTRY   <br>++Kienyeji++</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="Resources/Kienyeji-Chicken-Farming-in-Kenya.gif" alt="" id="poupic"> 
+                    
+                </div>
+                <div class="column right">
+                    <div class="container mt-5">
+                        <form id="feedform">
+                            <div class="mb-3">
+                                <label for="dayage" class="form-label">Beginning</label>
+                                <input type="number" class="form-control" id="dayage" name="dayage" min="0" max="126" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dayagel" class="form-label">End</label>
+                                <input type="number" class="form-control" id="dayagel" name="dayagel" min="0" max="126" required>
+                            </div>
+                            <div class="mb-3" margin-top="-50px">
+                                <label for="Nokienyeji" class="form-label">No. of Chicks</label>
+                                <input type="number" class="form-control" id="Nokienyeji" name="Nokienyeji" min="0" max="2024" required>
+                            </div> 
+                            <button type="button" class="btn btn-primary" id="feedsk" onclick=" kienyejifeedFunction()">Submit</button>  <button class="btn btn-primary" id="feedsk" onClick="window.location.reload();">Refresh Page</button>
+                            <p id="resultsk"></p> <p id="linebr"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    
+
+        <!-- contact section -->
+        <section class="contact" id="contact">
+            <div class="max-width">
+                <h2 class="title">Contact Me.</h2>
+               <div class="div contact-content">
+                <div class="column left">
+                    <div class="text" style="margin-top: -32px;">Get in Touch</div>
+                    <p>Here at Arbanite Farm Ventues we offer quality services. There are a wide variety of poultry to choose from, layers to broilers, Pigs and piglets and we also deal high quality animal feeds. Shoot us an email today and we'll get back to you as soon as possible. You ask We Make It Happen. </p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Name</div>
+                                <div class="sub-title">Arbanite Farm Ventures</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Address</div>
+                                <div class="sub-title"> Nakuru</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">arbaniteexample-@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- <div class="column right">
+                    <div class="text">Message Me</div>
+                    <form action="#">
+                        <div class="fields" style="margin-bottom: 30px;">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                       
+                        <div class="field textarea">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Describe project.." required></textarea>
+                            <div class="button">
+                                <button type="submit">Send Message</button> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               </div>
+            </div>
+        </section>
+        
+
+        <!-- Footer Section -->
+
+        <footer>
+            <span>Created By <a href="https://twitter.com/kev_af">@kevaf</a> <span class="far fa-copyright"> 2024 All Rights Reserved</span></span>
+        </footer>
+    
+    <script src="script.js"></script>
+        
+</body>
+</html>
